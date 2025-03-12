@@ -20,6 +20,8 @@ class ServiceList extends Component
     }
     
     public function delete(Service $service){
+      //  $this->authorize('delete', $service); //on appelle le methode delete qui est crée dans ServicePolicy
+
         $service->delete();
     }
     public function render()

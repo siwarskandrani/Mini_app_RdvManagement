@@ -16,7 +16,7 @@ class RdvList extends Component
     {
         // return Rdv::with('client', 'service')->get(); //on a importé les methodes client et service implémenté dans le modele rdv
         return Rdv::with('client', 'service')->paginate(4, pageName: 'rdvs-page'); //on a importé les methodes client et service implémenté dans le modele rdv
-
+       // with('client', 'service') c le eager loading qui permet de empecher les requetes dupliqués
         
     }
     

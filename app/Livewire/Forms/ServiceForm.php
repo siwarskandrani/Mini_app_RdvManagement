@@ -6,6 +6,8 @@ use App\Models\Service;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
+
+
 class ServiceForm extends Form
 {
     public ?Service $service;
@@ -22,8 +24,10 @@ class ServiceForm extends Form
 
         session()->flash('success', 'Service ajouté avec succès.');
 
-        // Réinitialisation des champs du formulaire
-        $this->resetForm();
+
+        $this->reset(['description', 'price']);
+
+       
 
     }
 
@@ -41,14 +45,8 @@ class ServiceForm extends Form
 
         session()->flash('success', 'Service updated avec succès.');
 
-        // Réinitialisation des champs du formulaire après update
-        $this->resetForm();
+      
 
     }
-     // Méthode pour réinitialiser les champs du formulaire
-     private function resetForm()
-     {
-         $this->description = '';
-         $this->price = null;
-     }
+    
 }

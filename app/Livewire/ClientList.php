@@ -15,7 +15,7 @@ class ClientList extends Component
     public function clients()
     {
         // return Client::all();
-        return Client::paginate(4, pageName: 'clients-page'); 
+         return Client::paginate(4, pageName: 'clients-page'); 
 
     }
     

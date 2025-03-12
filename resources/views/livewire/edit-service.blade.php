@@ -40,5 +40,7 @@
                 Sauvegarder
             </button>
         </div>
+          <!-- Loader -->
+          <span wire:loading>Chargement...</span>
     </form>
 </div>

@@ -10,9 +10,9 @@ class ClientForm extends Form
 {
     public ?Client $client;
 
-    public string $name;
-    public string $email;
-    public string $phone;
+    public  $name;
+    public  $email;
+    public  $phone;
 
     public function store()
     {
@@ -29,7 +29,7 @@ class ClientForm extends Form
         session()->flash('success', 'Client ajouté avec succès.');
 
         // Réinitialisation des champs du formulaire
-        $this->resetForm();
+        $this->reset(['name', 'email','phone']);
     }
 
     public function setClient(Client $client)
@@ -57,16 +57,9 @@ class ClientForm extends Form
 
             session()->flash('success', 'Client updated avec succès.');
 
-            // Réinitialisation des champs du formulaire après update
-            $this->resetForm();
+            
         }
     }
 
-    // Méthode pour réinitialiser les champs du formulaire
-    private function resetForm()
-    {
-        $this->name = '';
-        $this->email = '';
-        $this->phone = '';
-    }
+   
 }
